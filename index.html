@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoiceDraw · AI 语音绘图</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>VoiceDraw</h1>
+    <p class="sub">纯语音控制绘图 · XEngineer 第四批 题目二</p>
+    <p class="author">特列努尔·叶克布 · 南京邮电大学 · B25090602</p>
+  </header>
+
+  <main>
+    <section class="canvas-wrap">
+      <canvas id="board" width="900" height="520"></canvas>
+      <div id="hint" class="hint">说「开始监听」进入纯语音模式</div>
+    </section>
+
+    <aside class="panel">
+      <div class="status" id="status">准备就绪</div>
+      <span class="mode-badge" id="modeBadge">连续语音：关</span>
+
+      <button id="startListenBtn" class="btn primary" type="button">开启连续语音（推荐 Demo）</button>
+      <button id="micBtn" class="mic" type="button">🎙️ 按住说话（备用）</button>
+      <button id="toggleVoiceBtn" class="btn ghost" type="button">语音反馈：开</button>
+
+      <p class="last" id="lastText">最近识别：—</p>
+
+      <h3>可说指令</h3>
+      <ul class="cmds">
+        <li><b>模式</b> 开始监听 / 停止监听 / 帮助</li>
+        <li><b>绘图</b> 画圆、椭圆、矩形、正方形、三角形、五角星、画线</li>
+        <li><b>颜色</b> 红色、蓝色、绿色、画一个红色的圆</li>
+        <li><b>位置</b> 在左边/右边/中间画圆</li>
+        <li><b>变换</b> 大一点、小一点、左移、右移、上移、下移</li>
+        <li><b>编辑</b> 撤销、清空画布、导出图片</li>
+      </ul>
+
+      <h3>操作日志</h3>
+      <ol id="log" class="log"></ol>
+    </aside>
+  </main>
+
+  <footer>
+    <span>全程无需鼠标键盘绘图 · 仅需 Chrome/Edge 麦克风权限 · 零 API 费用</span>
+  </footer>
+
+  <script src="js/canvas-engine.js"></script>
+  <script src="js/commands.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

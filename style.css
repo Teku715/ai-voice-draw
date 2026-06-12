@@ -1,0 +1,147 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #0f1419;
+  color: #e7ecf1;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1.2rem 1rem 0.5rem;
+}
+
+header h1 { font-size: 1.6rem; font-weight: 700; }
+.sub { color: #8b9aab; font-size: 0.9rem; margin-top: 0.25rem; }
+.author { color: #6b8fb8; font-size: 0.78rem; margin-top: 0.35rem; }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1rem;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  background: #1a2332;
+  border: 1px solid #2a3544;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#board {
+  display: block;
+  width: 100%;
+  background: #fff;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hint {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.panel {
+  background: #1a2332;
+  border: 1px solid #2a3544;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.status {
+  padding: 0.5rem 0.75rem;
+  background: #243044;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #9fd4ff;
+}
+
+.status.listening { background: #2d4a3e; color: #9ff0b5; }
+.status.error { background: #4a2d2d; color: #ffb4b4; }
+
+.mode-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #243044;
+  color: #9fb0c3;
+}
+.mode-badge.on { background: #2d4a3e; color: #9ff0b5; }
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+}
+.btn.ghost {
+  background: rgba(255,255,255,0.05);
+  color: #c7d4e4;
+  border: 1px solid #2a3544;
+}
+
+.mic {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+}
+
+.mic:active, .mic.active {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  transform: scale(0.98);
+}
+
+.last { font-size: 0.8rem; color: #8b9aab; word-break: break-all; }
+
+.panel h3 { font-size: 0.85rem; color: #9fb0c3; margin-top: 0.25rem; }
+
+.cmds { font-size: 0.78rem; color: #b8c5d6; padding-left: 1.1rem; line-height: 1.6; }
+
+.log {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 160px;
+  font-size: 0.75rem;
+  color: #a8b8ca;
+  padding-left: 1.2rem;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7c8f;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
